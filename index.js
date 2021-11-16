@@ -1,38 +1,11 @@
-class Cliente {
-    nome;
-    cpf;
-}
+import { Cliente } from "./Cliente.js";
+import { ContaCorrente } from "./ContaCorrente.js";
 
-// # significa atributo privado (nao oficial)
-class ContaCorrente {
-    agencia;
-    _saldo = 0;
+const cliente1 = new Cliente()
+cliente1.nome = "Mateus"
+cliente1.cpf = 55588866610
 
-    sacar(valor) {
-        if(this._saldo >= valor) {
-            this._saldo -= valor;
-            return valor
+const cliente1Conta = new ContaCorrente();
+cliente1Conta.agencia = 1001
 
-        }
-    };
-
-    depositar(valor) {
-        if(valor <= 0) {
-            return;
-        }
-        this._saldo += valor        
-    }
-}
-
-const contaRodrigo = new Cliente();
-contaRodrigo.nome = "Rodrigo";
-contaRodrigo.cpf = 11122233310
-
-const RodrigoCorrente = new ContaCorrente();
-RodrigoCorrente.agencia = 2020;
-RodrigoCorrente._saldo = 0
-RodrigoCorrente.depositar(150)
-const valorSacado = RodrigoCorrente.sacar(70)
-console.log(valorSacado)
-
-console.log(RodrigoCorrente)
+console.log(cliente1)
