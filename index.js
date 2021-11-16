@@ -3,20 +3,22 @@ class Cliente {
     cpf;
 }
 
+// # significa atributo privado
 class ContaCorrente {
     agencia;
-    saldo;
+    #saldo = 0;
 
     sacar(valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor
+        if(this.#saldo >= valor) {
+            this.#saldo -= valor
         }
     };
 
     depositar(valor) {
-        if(this.valor > 0) {
-            this.saldo += valor
+        if(valor > 0) {
+            this.#saldo += valor
         }
+        return console.log(this.#saldo)
     }
 }
 
@@ -26,6 +28,9 @@ contaRodrigo.cpf = 11122233310
 
 const RodrigoCorrente = new ContaCorrente();
 RodrigoCorrente.agencia = 2020;
-RodrigoCorrente.saldo = 10000;
+RodrigoCorrente.depositar(25)
+RodrigoCorrente.depositar(25)
+RodrigoCorrente.depositar(25)
+RodrigoCorrente.depositar(25)
 
 console.log(RodrigoCorrente)
