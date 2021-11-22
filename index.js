@@ -7,5 +7,6 @@ cliente1.cpf = 55588866610
 
 const cliente1Conta = new ContaCorrente();
 cliente1Conta.agencia = 1001
+cliente1Conta.cliente = cliente1;
 
-console.log(cliente1)
+console.log(cliente1Conta)
