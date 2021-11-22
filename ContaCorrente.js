@@ -3,16 +3,14 @@ import { Cliente } from "./Cliente.js";
 export class ContaCorrente {
     // atributo estatico
     static numeroDeContas = 0
-    
-    // atributo publico
-    agencia;
 
 
+    // metodos
     sacar(valor) {
         if(this._saldo >= valor) {
             this._saldo -= valor;
             return valor
-
+            
         }
     };
 
@@ -30,6 +28,7 @@ export class ContaCorrente {
 
     }
 
+    // atributos privados
     _cliente;
 
     set cliente(novoValor) {
@@ -42,16 +41,16 @@ export class ContaCorrente {
         return this._cliente
     }
 
-    // atributo privado
-    _saldo = 0;
 
     get saldo() {
         return this._saldo
     }
     
     constructor(cliente, agencia) {
-        this.agencia = agencia
-        this.cliente = cliente
+        this.agencia = agencia;
+        this.cliente = cliente;
+        this._saldo = 0;
+        
         ContaCorrente.numeroDeContas += 1
     }
 }
