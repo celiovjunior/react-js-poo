@@ -3,25 +3,7 @@ import { Cliente } from "./Cliente.js";
 export class ContaCorrente {
     // atributo publico
     agencia;
-    _cliente;
-
-    set cliente(novoValor) {
-        if(novoValor instanceof Cliente) {
-            this._cliente = novoValor
-        }
-    }
-
-    get cliente() {
-        return this._cliente
-    }
-
-    // atributo privado
-    _saldo = 0;
-
-    get saldo() {
-        return this._saldo
-    }    
-
+    
     sacar(valor) {
         if(this._saldo >= valor) {
             this._saldo -= valor;
@@ -42,5 +24,29 @@ export class ContaCorrente {
         conta.depositar(valorSacado)
         conta.cidade = 'Fortaleza'
 
+    }
+
+    _cliente;
+
+    set cliente(novoValor) {
+        if(novoValor instanceof Cliente) {
+            this._cliente = novoValor
+        }
+    }
+
+    get cliente() {
+        return this._cliente
+    }
+
+    // atributo privado
+    _saldo = 0;
+
+    get saldo() {
+        return this._saldo
+    }
+    
+    constructor(cliente, agencia) {
+        this.agencia = agencia
+        this.cliente = cliente
     }
 }
