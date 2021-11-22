@@ -24,5 +24,7 @@ export class ContaCorrente {
     transferir(valor, conta) {
         const valorSacado = this.sacar(valor)
         conta.depositar(valorSacado)
+        conta.cidade = 'Fortaleza'
+
     }
 }
