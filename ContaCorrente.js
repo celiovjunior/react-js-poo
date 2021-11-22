@@ -1,10 +1,23 @@
+import { Cliente } from "./Cliente.js";
+
 export class ContaCorrente {
     // atributo publico
     agencia;
-    cliente;
+    _cliente;
+
+    set cliente(novoValor) {
+        if(novoValor instanceof Cliente) {
+            this._cliente = novoValor
+        }
+    }
+
+    get cliente() {
+        return this._cliente
+    }
 
     // atributo privado
     _saldo = 0;
+    
 
     sacar(valor) {
         if(this._saldo >= valor) {
