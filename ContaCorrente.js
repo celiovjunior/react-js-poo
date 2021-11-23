@@ -10,4 +10,9 @@ export class ContaCorrente extends Conta {
         super(0, cliente, agencia)
         ContaCorrente.numeroDeContas += 1
     }
+
+    teste() {
+        super.teste()
+        console.log("Teste na classe ContaCorrente")
+    }
 }

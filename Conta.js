@@ -6,20 +6,8 @@ export class Conta {
     }
 
     sacar(valor) {
-        let taxa = 1
-
-        if(this._tipo == "corrente") {
-            taxa = 1.1
-        }
-        if(this._tipo == "salario") {
-            taxa = 1.05
-        }
-        if(this._tipo == "empresario") {
-            taxa = 1.15
-        }
-
+        let taxa = 1.1
         const valorSacado = taxa * valor
-
         if(this._saldo >= valorSacado) {
             this._saldo -= valorSacado;
             return valorSacado
@@ -31,7 +19,7 @@ export class Conta {
         if(valor <= 100) {
             return;
         }
-        this._saldo += valor        
+        this._saldo += valor
     }
 
     transferir(valor, conta) {
@@ -55,5 +43,9 @@ export class Conta {
 
     get saldo() {
         return this._saldo
+    }
+
+    teste() {
+        console.log("Teste na classe Conta")
     }
 }
