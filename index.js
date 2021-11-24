@@ -1,4 +1,4 @@
-import { Cliente } from "./Conta/Cliente.js";
+import { Cliente } from "./Cliente/Cliente.js";
 import { ContaCorrente } from "./Conta/ContaCorrente.js";
 import { ContaPoupanca } from "./Conta/ContaPoupanca.js";
 import { ContaSalario } from "./Conta/ContaSalario.js";
