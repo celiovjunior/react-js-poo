@@ -1,7 +1,7 @@
 export class Conta {
     constructor(saldoInicial, cliente, agencia) {      
         if(this.constructor == Conta) {
-            throw new Error("Not allowed")
+            throw new Error("Not allowed to create an instance of class Conta")
         }
 
         this._saldo = saldoInicial;
@@ -9,10 +9,10 @@ export class Conta {
         this._agencia = agencia;
     }
 
+    // metodo abstrato
     sacar(valor) {
-        let taxa = 1
-        return this._sacar(valor, taxa)
-    };
+        throw new Error("Abstract method")
+    }
     
     _sacar(valor, taxa) {
         const valorSacado = taxa * valor
