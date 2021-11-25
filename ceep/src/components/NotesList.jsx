@@ -5,18 +5,14 @@ class NotesList extends Component {
     render() {
         return(
         <ul>
-            <li>
-              <NoteCard />
-            </li>
-            <li>
-              <NoteCard />
-            </li>
-            <li>
-              <NoteCard />
-            </li>
-            <li>
-              <NoteCard />
-            </li>
+          {Array.of("Work", "Work", "Study").map(category => {
+            return(
+              <li>
+                <h2>{ category }</h2>
+                <NoteCard />
+              </li>
+            )
+          })}
         </ul>
         );
     }
