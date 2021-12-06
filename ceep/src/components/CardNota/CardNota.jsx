@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./estilo.css";
+import deleteImg from '../../assets/images/delete.svg';
+
 class CardNota extends Component {
   render() {
     return (
@@ -7,6 +9,9 @@ class CardNota extends Component {
         <header className="card-nota_cabecalho">
           <h3 className="card-nota_titulo">{this.props.titulo}</h3>
         </header>
+
+        <img src={deleteImg} alt="ícone de deletar" />
+
         <p className="card-nota_texto">{this.props.texto}</p>
       </section>
     );
