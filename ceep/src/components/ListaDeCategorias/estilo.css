@@ -1,0 +1,18 @@
+section {
+  margin-right: 1rem;
+  display: flex;
+}
+
+ul {
+  display: flex;
+  margin-left: 3rem;
+}
+
+li {
+  margin-right: 2rem;
+  padding: 0.5rem 0.75rem;
+  background: #4d4b4b;
+  color: white;
+  font-weight: bold;
+  border-radius: 2.5px;
+}
