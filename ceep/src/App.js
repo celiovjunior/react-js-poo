@@ -28,8 +28,10 @@ class App extends Component {
     this.setState(novoEstado)
   }
 
-  deletarNota() {
-    console.log("deletou")
+  deletarNota(index) {
+    let arrayDeNotas = this.state.notas
+    arrayDeNotas.splice(index, 1) // deletando um item de cada vez
+    this.setState({notas: arrayDeNotas})
   }
 
 
