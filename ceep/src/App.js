@@ -3,15 +3,14 @@ import ListaDeNotas from "./components/ListaDeNotas/ListaDeNotas";
 import "./assets/App.css";
 import './assets/index.css';
 import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro";
+import ListaDeCategorias from "./components/ListaDeCategorias/ListaDeCagegorias";
 
 class App extends Component {
   constructor() {
     super()
-
     this.state = {
       notas: []
     }
-
   }
 
   criarNota(titulo, texto) {
@@ -19,12 +18,10 @@ class App extends Component {
       titulo,
       texto
     }
-
     const novoArrayDeNotas = [...this.state.notas, novaNota]
     const novoEstado = {
       notas: novoArrayDeNotas
     }
-
     this.setState(novoEstado)
   }
 
@@ -39,7 +36,10 @@ class App extends Component {
     return (
       <section className="conteudo">
         <FormularioCadastro criarNota={this.criarNota.bind(this)} />
-        <ListaDeNotas apagarNota={this.deletarNota.bind(this)} notas={this.state.notas} />
+          <main className="conteudo-principal">
+            <ListaDeNotas apagarNota={this.deletarNota.bind(this)} notas={this.state.notas} />
+            <ListaDeCategorias />
+          </main>
       </section>
     );
   }
