@@ -7,9 +7,11 @@ import FormularioCadastro from "./components/FormularioCadastro/FormularioCadast
 class App extends Component {
   constructor() {
     super()
+
     this.state = {
       notas: []
     }
+
   }
 
   criarNota(titulo, texto) {
@@ -17,11 +19,17 @@ class App extends Component {
       titulo,
       texto
     }
+
     const novoArrayDeNotas = [...this.state.notas, novaNota]
     const novoEstado = {
       notas: novoArrayDeNotas
     }
+
     this.setState(novoEstado)
+  }
+
+  deletarNota() {
+    console.log("deletou")
   }
 
 
@@ -29,7 +37,7 @@ class App extends Component {
     return (
       <section className="conteudo">
         <FormularioCadastro criarNota={this.criarNota.bind(this)} />
-        <ListaDeNotas notas={this.state.notas} />
+        <ListaDeNotas apagarNota={this.deletarNota.bind(this)} notas={this.state.notas} />
       </section>
     );
   }
