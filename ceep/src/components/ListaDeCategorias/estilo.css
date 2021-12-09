@@ -11,8 +11,8 @@ ul {
 li {
   margin-right: 2rem;
   padding: 0.5rem 0.75rem;
-  background: #4d4b4b;
+  background: var(--secundaria);
   color: white;
-  font-weight: bold;
+  font-weight: lighter;
   border-radius: 2.5px;
 }
