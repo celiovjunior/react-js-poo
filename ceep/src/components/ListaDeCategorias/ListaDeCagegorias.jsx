@@ -3,19 +3,19 @@ import './estilo.css';
 
 class ListaDeCategorias extends Component {
     _handleEventoInput(event) {
-        if(event.key == 'Enter') {
-            console.log("Adicionar categoria")
+        if(event.key === 'Enter') {
+            let valorCategoria = event.target.value
+            this.props.adicionarCategoria(valorCategoria)
         }
     }
 
     render() { 
         return(
-            <section className={"sessao-categorias"}>
+            <section className="sessao-categorias">
                 <ul className="lista-categorias">
-                    <li>Categoria</li>
-                    <li>Categoria</li>
-                    <li>Categoria</li>
-                    <li>Categoria</li>
+                {this.props.categorias.map((categoria, index) => {
+                    return <li key={index}>{categoria}</li>
+                })}
                 </ul>
                 <input 
                 placeholder="Adicionar categoria" 

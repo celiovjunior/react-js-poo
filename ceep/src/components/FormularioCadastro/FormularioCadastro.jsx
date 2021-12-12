@@ -10,7 +10,6 @@ class FormularioCadastro extends Component {
 
   _handleMudancaDeTitulo(event) {
     event.stopPropagation();
-    event.stopPropagation();
     this.titulo = event.target.value;
   }
 
@@ -21,7 +20,6 @@ class FormularioCadastro extends Component {
 
   _criarNota(event) {
     event.preventDefault();
-    event.stopPropagation();
     this.props.criarNota(this.titulo, this.texto)
   }
   
