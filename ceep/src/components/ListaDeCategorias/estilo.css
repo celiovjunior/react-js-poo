@@ -1,14 +1,15 @@
-section {
+.sessao-categorias {
   margin-right: 1rem;
+  margin-top: 1rem;
   display: flex;
 }
 
-ul {
+.lista-categorias {
   display: flex;
   margin-left: 3rem;
 }
 
-li {
+.lista-categorias li {
   margin-right: 2rem;
   padding: 0.5rem 0.75rem;
   background: var(--secundaria);
