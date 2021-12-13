@@ -7,6 +7,7 @@ class ListaDeCategorias extends Component {
             let valorCategoria = event.target.value
             this.props.adicionarCategoria(valorCategoria)
         }
+
     }
 
     render() { 
