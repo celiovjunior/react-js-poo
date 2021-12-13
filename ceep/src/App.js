@@ -10,14 +10,15 @@ class App extends Component {
     super()
     this.state = {
       notas: [],
-      categorias: []
+      categorias: ['Cursos', 'Trabalho']
     }
   }
 
-  criarNota(titulo, texto) {
+  criarNota(titulo, texto, categoria) {
     const novaNota = {
       titulo,
-      texto
+      texto,
+      categoria
     }
     const novoArrayDeNotas = [...this.state.notas, novaNota]
     const novoEstado = {
