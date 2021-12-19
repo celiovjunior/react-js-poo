@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import './estilo.css';
 
 class ListaDeCategorias extends Component {
+    componentDidMount() {
+        this.props.categorias.inscrever(this._novasCategorias.bind(this));
+    }
+
+    _novasCategorias(categorias) {
+        console.log(categorias)
+    }
+
     _handleEventoInput(event) {
         if(event.key === 'Enter') {
             let valorCategoria = event.target.value
