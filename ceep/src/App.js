@@ -18,8 +18,8 @@ class App extends Component {
     return (
       <section className="conteudo">
         <FormularioCadastro 
+        categorias={this.categorias} 
         criarNota={this.notas.criarNota}
-        categorias={this.categorias.categorias} 
         />
           <main className="conteudo-principal">
             <ListaDeCategorias 
