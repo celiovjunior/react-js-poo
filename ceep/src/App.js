@@ -19,13 +19,13 @@ class App extends Component {
       <section className="conteudo">
         <FormularioCadastro 
         categorias={this.categorias} 
-        criarNota={this.notas.criarNota}
+        criarNota={this.notas.adicionarNota.bind(this.notas)}
         />
           <main className="conteudo-principal">
             <ListaDeCategorias 
             adicionarCategoria={this.categorias.adicionarCategoria.bind(this.categorias)}
             categorias={this.categorias} />
-            <ListaDeNotas apagarNota={this.notas.apagarNota} notas={this.notas.notas} />
+            <ListaDeNotas apagarNota={this.notas.apagarNota.bind(this.notas)} notas={this.notas} />
           </main>
       </section>
     );

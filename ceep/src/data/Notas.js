@@ -7,10 +7,12 @@ export default class ArrayDeNotas {
     adicionarNota(titulo, texto, categoria) {
         const novaNota = new Nota(titulo, texto, categoria)
         this.notas.push(novaNota);
+        this.notificar()
     }
 
     apagarNota(index) {
         this.notas.splice(index, 1)
+        this.notificar()
     }
 
     inscrever(func) {
@@ -18,12 +20,12 @@ export default class ArrayDeNotas {
     }
 
     notificar() {
-        this._inscritos.forEach(func => func(this.categorias))
+        this._inscritos.forEach(func => func(this.notas))
     }
 }
 
 class Nota {
-    constructo(titulo, texto, categoria) {
+    constructor(titulo, texto, categoria) {
         this.titulo = titulo
         this.texto = texto
         this.categoria = categoria
