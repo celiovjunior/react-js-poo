@@ -14,7 +14,6 @@ class ListaDeCategorias extends Component {
 
     componentWillUnmount() {
         this.props.categorias.desinscrever(this._novasCategorias);
-
     }
 
     _novasCategorias(categorias) {
